@@ -19,13 +19,25 @@ public class Romain {
 	}
 
 	private String prendreParole() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Le romain " + nom + " : ";
 	}
 
-	public void recevoirCoup(int i) {
-		// TODO Auto-generated method stub
+	public void recevoirCoup(int forceCoup) {
+		force -= forceCoup;
+		if (force > 0) {
+			parler("Aie");
+		} else {
+			parler("J'abandonne...");
+		}
 
+	}
+	
+	public static void main(String[] args) {
+		Romain cesar = new Romain("César", 10);
+		System.out.println(cesar.getNom());
+		cesar.parler("Je suis le grand César");
+		cesar.recevoirCoup(3);
+		System.out.println("La force de César est de " + cesar.force);
 	}
 
 }
